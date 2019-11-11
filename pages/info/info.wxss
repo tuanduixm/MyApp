@@ -1,0 +1,14 @@
+/* pages/info/info.wxss */
+
+.butt{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10rpx;
+}
+
+.contain{
+  margin: 10rpx;
+  
+}

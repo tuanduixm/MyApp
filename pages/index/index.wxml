@@ -1,0 +1,7 @@
+
+
+<view class="container" style="background-image:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573305473042&di=f1d160847c48d9354fc1caf91c093cb7&imgtype=0&src=http%3A%2F%2Ffile03.16sucai.com%2F2017%2F1100%2F16sucai_v571c178_4dc.JPG');">
+  <button open-type="getUserInfo" type="primary" bindgetuserinfo="onGotUserInfo" style="border-radius: 50rpx;">
+    获取用户权限
+  </button>
+</view>

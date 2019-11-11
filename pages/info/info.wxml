@@ -1,0 +1,26 @@
+<!--pages/info/info.wxml-->
+
+
+
+<view class="container">
+
+  <form bindsubmit="modifyInfo">
+
+    <i-panel title="基础信息">
+      <i-input value="{{ value1 }}" title="姓名:" autofocus placeholder="{{ value1 }} " bind:change="inputName" name="name"/>
+    </i-panel>
+
+    <i-input title="学校:" bind:tap="handleOpen1" value="{{value2}}" placeholder="{{value2}}" disabled="true" name="school"/>
+    <i-action-sheet visible="{{ visible1 }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
+
+    <i-panel title="">
+      <i-input bind:change="inputID" value="{{ value3 }}" type="number" title="学号:" placeholder="{{ value3 }}" name="id"/>
+      <i-input bind:change="inputPhone" value="{{ value4 }}" type="number" title="电话:" placeholder="{{ value4 }}" name="phone"/>
+    </i-panel>
+
+    <view class="butt">
+      <button form-type="submit" type="Primary">确认修改</button>
+    </view>
+  </form>
+
+</view>

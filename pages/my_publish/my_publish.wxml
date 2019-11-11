@@ -1,0 +1,16 @@
+<!--pages/my_publish/my_publish.wxml-->
+<view class="top">我的发布▾</view>
+
+<view class="container">
+
+  <view wx:for="{{list}}">
+    <view class="mar">
+      <i-card title="{{item.category}}" extra="{{item.type_t}}">
+        <view slot="content">{{item.msg}}</view>
+      </i-card>
+    </view>
+
+
+  </view>
+
+</view>

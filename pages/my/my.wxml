@@ -1,0 +1,16 @@
+<!--pages/my/my.wxml-->
+
+
+<view class="container" >
+  <i-card title="{{userInfo.nickName}}" extra="{{userInfo.province}}" thumb="{{userInfo.avatarUrl}}">
+  </i-card>
+
+  <i-cell-group>
+
+    <i-cell title=" 用户信息" is-link url="/pages/info/info" ></i-cell>
+    <i-cell title=" 发布的贴子" is-link url="/pages/my_publish/my_publish"></i-cell>
+    <i-cell title=" 赏金" is-link url="/pages/index/index"></i-cell>
+
+  </i-cell-group>
+</view>
+

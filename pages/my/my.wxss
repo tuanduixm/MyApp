@@ -1,0 +1,6 @@
+/* pages/my/my.wxss */
+
+.container{
+  margin: 10rpx;
+}
+

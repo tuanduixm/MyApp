@@ -1,0 +1,10 @@
+{
+  "window": {
+    "enablePullDownRefresh": true
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "大学城失物招领处",
+  "usingComponents": {
+    
+  }
+}

@@ -1,0 +1,18 @@
+/* pages/my_publish/my_publish.wxss */
+
+.container{
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.top{
+  display: flex;
+  justify-content: center;
+  margin: 25rpx;
+}
+
+.mar{
+  margin: 10rpx;
+}
