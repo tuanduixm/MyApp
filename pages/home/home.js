@@ -47,7 +47,18 @@ Page({
 
   },
 
-
+  edit:function(){
+    if(app.globalData.loggin){
+      wx.navigateTo({
+        url: '../edit/edit',
+      })
+    }else{
+      wx.showToast({
+        title: '请先登录',
+        icon:'none'
+      })
+    }
+  },
   
 
   search: function(event, userid) {

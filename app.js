@@ -4,7 +4,8 @@ App({
   globalData:{
     openid:'',
     userInfo:'',
-    categories: ['所有', '校园卡', '雨伞', '钱包']
+    categories: ['所有', '校园卡', '雨伞', '钱包'],
+    loggin:false
    
   },
   onLaunch:function(){

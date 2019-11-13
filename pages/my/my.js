@@ -30,7 +30,7 @@ Page({
   toPublish: function (e) {
     if (loggin == true) {
       wx.navigateTo({
-        url: '/pages/info/info',
+        url: '/pages/my_publish/my_publish',
       })
     } else {
       wx.showToast({
@@ -61,6 +61,7 @@ Page({
         hide:'none'
       });
       loggin = true;
+      app.globalData.loggin = true;
 
       
       console.log(user);

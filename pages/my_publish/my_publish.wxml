@@ -7,6 +7,9 @@
     <view class="mar">
       <i-card title="{{item.category}}" extra="{{item.type_t}}">
         <view slot="content">{{item.msg}}</view>
+        <view slot="footer">
+          <button id="{{index}}" catchtap="delete" class="bu" size="mini">删除</button>
+        </view>
       </i-card>
     </view>
 

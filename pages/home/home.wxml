@@ -11,9 +11,9 @@
 
 
 <view >
-  <navigator url='../edit/edit'>
-    <image class="append" src="../../images/source/append.png"></image>
-  </navigator>
+  
+    <image class="append"   catchtap="edit" src="../../images/source/append.png"></image>
+  
 </view>
 
 <view class="swiper-tab">

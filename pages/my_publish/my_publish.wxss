@@ -16,3 +16,10 @@
 .mar{
   margin: 10rpx;
 }
+
+.bu{
+  margin-left:80%; 
+  color: white;
+  background: #4CAF50;
+  font-weight: 100;
+}

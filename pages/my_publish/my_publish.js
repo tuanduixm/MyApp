@@ -40,6 +40,43 @@ Page({
     })
   },
 
+  delete:function(res){
+    console.log(res.currentTarget.id);
+    let id = res.currentTarget.id;
+    let that =this;
+    wx.showModal({
+      title: '删除',
+      content: '确认删除？',
+      confirmText: '确定',
+      cancelText: '取消',
+      success:function(res){
+        if (res.confirm) {
+
+          console.log('用户点击了确定')
+          DB.doc(that.data.list[id]._id).remove({
+            success: function (res) {
+              console.log('remove succe', res);
+            },
+            fail: function (res) {
+              console.log('remove fail', res);
+            }
+          });
+          that.data.list.splice(id,1);
+          that.setData({
+            list:that.data.list
+          });
+          
+          
+        } else if (res.cancel) {
+
+          console.log('用户点击取消')
+
+        }
+      }
+    })
+    
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
