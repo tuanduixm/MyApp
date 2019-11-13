@@ -8,7 +8,7 @@ Page({
    */
   data: {
     
-    avatarUrl:'http://img.qqzhi.com/uploads/2018-11-30/021340324.jpg',
+    avatarUrl:'/images/icon.png',
     province:'省份',
     nickName:'名称',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
