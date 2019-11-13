@@ -2,5 +2,22 @@
 
 .container{
   margin: 10rpx;
+  
+}
+
+.buttbox{
+  position: fixed;
+  
+  display: block;
+  width: 750rpx;
+  bottom: 35rpx;
+}
+
+.butt{
+  color:white;
+  font-weight: 100;
+  border-radius: 50rpx;
+
+  background-color: #4CAF50;
 }
 

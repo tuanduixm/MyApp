@@ -2,15 +2,28 @@
 
 
 <view class="container" >
-  <i-card title="{{userInfo.nickName}}" extra="{{userInfo.province}}" thumb="{{userInfo.avatarUrl}}">
+  <i-card title="{{nickName}}" extra="{{province}}" thumb="{{avatarUrl}}">
+    <view slot="content">
+      
+    </view>
   </i-card>
+
+
+  
 
   <i-cell-group>
 
-    <i-cell title=" 用户信息" is-link url="/pages/info/info" ></i-cell>
-    <i-cell title=" 发布的贴子" is-link url="/pages/my_publish/my_publish"></i-cell>
-    <i-cell title=" 赏金" is-link url="/pages/index/index"></i-cell>
+    <i-cell title=" 用户信息" bind:click="toUserInfo" ></i-cell>
+    <i-cell title=" 发布的贴子" bind:click="toPublish" ></i-cell>
+    <i-cell title=" 赏金" ></i-cell>
 
   </i-cell-group>
+</view>
+
+
+<view class="buttbox">
+  <button class="butt" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" style="display:{{hide}};">
+    点击获取用户信息
+  </button>
 </view>
 

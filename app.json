@@ -1,12 +1,12 @@
 {
   "pages": [
-
-    "pages/index/index",
+    "pages/home/home",
+    
     "pages/my_publish/my_publish",
     
     "pages/my/my",
     "pages/info/info",
-    "pages/home/home",
+    
     "pages/edit/edit"
     
   ],

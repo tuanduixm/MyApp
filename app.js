@@ -8,6 +8,7 @@ App({
    
   },
   onLaunch:function(){
+    let that = this;
     if(!wx.cloud){
       console.error('找不到云');
     }else{
@@ -15,6 +16,16 @@ App({
         traceUser:true,
         env: 'qq-x7f66'
       });  
+      wx.cloud.callFunction({
+        name: 'getOpenid',
+        success: function (res) {
+          console.log('成功', res.result.openid);
+          that.globalData.openid = res.result.openid;
+        },
+        fail: function (res) {
+          console.log('失败', res);
+        }
+      });
 
       
     }
