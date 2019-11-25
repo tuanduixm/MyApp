@@ -125,10 +125,15 @@
 <view class="button-sp-area">
         <button type="primary" plain="true"  formType="submit"
  bindtap="stateswitch" >添加记录</button></view>
-    
+          
   </view>
 
 </form> 
+
+</view > 
+    
 </view> 
 
-</view> 
+<view style=" background-color:   #fff;">
+  <button   catchtap="tocard" plain="true" style="margin-left:189rpx;margin-top:10rpx;color:#d8d8d8;border-color:#d8d8d8;">添加校园卡记录</button>
+</view>

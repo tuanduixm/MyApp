@@ -46,6 +46,12 @@ Page({
     })
   },
 
+  tocard:function(){
+    wx.redirectTo({
+      url: '../addcard/addcard',
+    })
+  },
+
   //事件处理函数
   bindViewTap: function() {
 

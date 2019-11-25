@@ -2,8 +2,10 @@
 /* flex布局：http://www.jianshu.com/p/f82262002f8a*/
 .background{
   background-color:   #dbdbca;
+  
 }
 .contain{
+  
   display: flex;
   flex-direction: column;/*主轴方向*/
   justify-content: space-between; /*主轴上的对齐方式*/
