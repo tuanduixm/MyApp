@@ -8,7 +8,8 @@
     "pages/info/info",
     
     "pages/edit/edit",
-    "pages/addcard/addcard"
+    "pages/addcard/addcard",
+    "pages/search/search"
     
   ],
 
