@@ -1,5 +1,6 @@
-const app = getApp()
-var serverName = app.globalData.serverName
+const app = getApp();
+const DB = wx.cloud.database().collection('edit');
+
 Page({
   data: {
     searchs: [],
@@ -47,18 +48,17 @@ Page({
     for (i = 0; i < that.data.search_data.length; i++) {
       var nickName = that.data.search_data[i].nickName;
       var Msg = that.data.search_data[i].msg;
-      var user_id = that.data.search_data[i].user_id;
-      var Submission_time = that.data.search_data[i].submission_time.substring(5, that.data.search_data[i].submission_time.length - 3);
+      
+      
       var imageurl = '';
-      var imageList = that.data.search_data[i].image_url;
+      var imageList = that.data.search_data[i].fileIDs;
       var user_icon = that.data.search_data[i].avatarUrl;
       // var nick_name = that.data.search_data[i].nickName,
       // var avatarUrl = that.data.search_data[i].avatarUrl,
-      if (that.data.search_data[i].image_exist == "1")
-        imageurl = that.data.search_data[i].image_url[0];
+      if (that.data.search_data[i].fileIDs.length != 0)
+        imageurl = that.data.search_data[i].fileIDs[0];
         this.data.listofitem.push({
-          userid: user_id, username: nickName, text: Msg, imagelist: imageList, image: imageurl, usericon: user_icon, sub_time: Submission_time
-        })
+           username: nickName, text: Msg, imagelist: imageList, image: imageurl, usericon: user_icon        })
     }
     console.log('loading over');
     if(this.data.listofitem.length == 0)
@@ -77,7 +77,7 @@ Page({
       listofitem: this.data.listofitem
     })
   },
-  search_database: function (key, obj) {
+  search_database2: function (key, obj) {
     wx.request({
       url: serverName + '/index/search.php',
       data: {
@@ -98,40 +98,32 @@ Page({
     })
 
   },
+  search_database: function (key, obj) {
+    DB.where({
+      msg: {
+        $regex: '.*'+key+'.*',
+        $options: 'i'
+      }
+    }).get({
+      success: function (res) {
+        obj.setData({
+          search_data: res.data
+        })
+        console.log('当前数据库返回的search记录');
+        console.log(obj.data.search_data);
+        obj.Loadmsg();
+      },
+      fail:function(res){
+        console.log('查找失败',res.data)
+      }
+    })
+  },
   deleteItem: function (e) {
     var key = e.target.dataset.key;
     this.ref.child(key).remove();
   },
 
-  onLoad: function (options) {
-    this.ref = app.getTodoRef();
-    this.ref.on('child_added', function (snapshot, prkey) {
-      var key = snapshot.key()
-      var text = snapshot.val()
-      // JSON结构
-      var newItem = { key: key, text: text }
-      this.data.searchs.push(newItem);
-      this.setData({
-        searchs: this.data.searchs
-      })
-    }, this);
-    this.ref.on('child_removed', function (snapshot) {
-      var key = snapshot.key();
-      var index = this.data.searchs.findIndex(
-        (item, index) => {
-          if (item.key == key) {
-            return true;
-          }
-          return false;
-        });
-      if (index >= 0) {
-        this.data.searchs.splice(index, 1);
-        this.setData({
-          searchs: this.data.searchs
-        })
-      }
-    }, this)
-  },
+
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

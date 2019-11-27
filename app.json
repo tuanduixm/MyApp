@@ -11,6 +11,7 @@
     "pages/addcard/addcard",
     "pages/search/search"
     
+    
   ],
 
   "tabBar": {
