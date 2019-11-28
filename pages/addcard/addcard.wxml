@@ -2,6 +2,7 @@
 <form bindsubmit="submit">
   <i-input name="name" value="{{ value1 }}" title="姓名" autofocus placeholder="请输入姓名" />
     <i-input name="card" value="{{ value2 }}" type="number" title="卡号" placeholder="请输入卡号" />
+    <i-input name="phone" value="{{ value3 }}" type="number" title="联系电话" placeholder="请输入联系电话" />
     <button formType="submit"  type="primary" style="left: 150rpx;position: fixed;bottom: 30rpx;">添加校园卡记录</button>
 </form>
 

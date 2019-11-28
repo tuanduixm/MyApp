@@ -142,6 +142,7 @@ Page({
 
   //imagesPaths图片路径数组
   uploadAll: function(type_t, category, title, msg, imagesPaths) {
+    
     var publish_id = null;
     let fileIDs = [];
     const promiseArr = []
@@ -178,8 +179,9 @@ Page({
         success: function(res) {
           console.log('上传信息成功', res)
         }
+        
       });
-
+      
       wx.switchTab({
         url: '/pages/home/home',
         success: function(e) {
